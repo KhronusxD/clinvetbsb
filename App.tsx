@@ -2,27 +2,34 @@ import React from 'react';
 import TopBar from './components/TopBar';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import Comparison from './components/Comparison';
-import Features from './components/Features'; // This is now Value Stack
-import Testimonials from './components/Testimonials'; // This is now Social Proof
-import DreamOutcome from './components/DreamOutcome';
-import FAQ from './components/FAQ';
+import SocialProof from './components/SocialProof';
+import PainsSolutions from './components/PainsSolutions';
+import Diferenciais from './components/Diferenciais';
+import Testimonials from './components/Testimonials';
+import About from './components/About';
 import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col font-sans text-gray-700 bg-background scroll-smooth">
+    <div className="min-h-screen flex flex-col font-sans text-gray-700 bg-white scroll-smooth">
       <TopBar />
       <Navbar />
       <main className="flex-grow">
+        {/* 1. Hero */}
         <Hero />
-        <Comparison />
-        <Features />
+        {/* 2. Barra de Autoridade */}
+        <SocialProof />
+        {/* 3. Dores e Soluções */}
+        <PainsSolutions />
+        {/* 4. Nossos Diferenciais */}
+        <Diferenciais />
+        {/* 5. Depoimentos + Google Rating */}
         <Testimonials />
-        <DreamOutcome />
-        <FAQ />
+        {/* 6. Sobre Nós */}
+        <About />
+        {/* 7. CTA Final */}
         <FinalCTA />
       </main>
       <Footer />

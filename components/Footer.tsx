@@ -1,74 +1,109 @@
 import React from 'react';
-import { FACILITIES } from '../constants';
-import { PawPrint, MapPin, Phone, Mail } from 'lucide-react';
+import { MapPin, Phone, Mail, Instagram, Facebook, MessageCircle } from 'lucide-react';
+import { WHATSAPP_LINK, WHATSAPP_NUMBER, PHONE_LINK, PHONE_MAIN, EMAIL, ADDRESS, GOOGLE_MAPS_LINK, SERVICES } from '../constants';
+import { trackWhatsApp, trackPhone, trackMaps } from '../utils/tracking';
 
 const Footer: React.FC = () => {
+  // Real Google Maps embed URL obtained from Google Maps > Share > Embed a map
+  const mapsEmbedSrc = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3842.019786022881!2d-47.80196499999999!3d-15.643934799999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a407e75283f2d%3A0x3b7a6cb88231e1d6!2sClinvet%20Veterin%C3%A1ria!5e0!3m2!1spt-BR!2sbr!4v1773329316288!5m2!1spt-BR!2sbr`;
+
   return (
-    <footer className="bg-primary text-white pt-20 pb-10 rounded-t-[3rem] mt-10">
+    <footer id="contato-footer" className="bg-primary text-white pt-20 pb-10 rounded-t-[3rem] mt-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 mb-16">
-          {/* Left: Location & Info */}
+
+        {/* Top Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-10 mb-16">
+
+          {/* Column 1: Brand + Contato */}
           <div>
-            <h2 className="text-3xl font-display font-bold mb-6">Pertinho de você em Brasília</h2>
-            <div className="flex flex-col gap-4 mb-8 text-gray-200">
-               <div className="flex items-start gap-3">
-                 <MapPin className="mt-1 text-secondary" />
-                 <p>SHIN CA 5 Bloco J - Lago Norte, Brasília - DF</p>
-               </div>
-               <div className="flex items-center gap-3">
-                 <Phone className="text-secondary" />
-                 <p>(61) 99999-9999</p>
-               </div>
-               <div className="flex items-center gap-3">
-                 <Mail className="text-secondary" />
-                 <p>contato@clinvet.com.br</p>
-               </div>
+            <div className="flex items-center gap-2 mb-6">
+              <img
+                src="/logo-branco.png"
+                alt="Clinvet Sobradinho"
+                className="h-16 w-auto object-contain"
+              />
             </div>
 
-            <div className="bg-white/10 p-6 rounded-3xl backdrop-blur-sm">
-              <h3 className="font-display font-bold mb-4 text-lg">Comodidades:</h3>
-              <ul className="space-y-3">
-                {FACILITIES.map((f, i) => (
-                  <li key={i} className="flex items-center gap-3 text-gray-100">
-                    <div className="text-accent">{f.icon}</div>
-                    <span>{f.text}</span>
-                  </li>
-                ))}
-              </ul>
+            <ul className="space-y-3 text-gray-200">
+              <li className="flex items-start gap-3">
+                <MapPin className="mt-1 text-accent shrink-0" size={18} />
+                <p className="text-sm leading-relaxed">{ADDRESS}</p>
+              </li>
+              <li>
+                <a href={PHONE_LINK} onClick={() => trackPhone('footer')} className="flex items-center gap-3 hover:text-accent transition-colors">
+                  <Phone className="text-accent shrink-0" size={18} />
+                  <p className="text-sm">{PHONE_MAIN}</p>
+                </a>
+              </li>
+              <li>
+                <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsApp('footer')} className="flex items-center gap-3 hover:text-accent transition-colors">
+                  <MessageCircle className="text-accent shrink-0" size={18} />
+                  <p className="text-sm">(61) 98157-9676 – WhatsApp</p>
+                </a>
+              </li>
+              <li>
+                <a href={`mailto:${EMAIL}`} className="flex items-center gap-3 hover:text-accent transition-colors">
+                  <Mail className="text-accent shrink-0" size={18} />
+                  <p className="text-sm">{EMAIL}</p>
+                </a>
+              </li>
+            </ul>
+
+            {/* Social Icons */}
+            <div className="flex items-center gap-4 mt-6">
+              <a href="#" aria-label="Instagram" className="bg-white/10 hover:bg-accent p-2.5 rounded-full transition-colors">
+                <Instagram size={18} />
+              </a>
+              <a href="#" aria-label="Facebook" className="bg-white/10 hover:bg-accent p-2.5 rounded-full transition-colors">
+                <Facebook size={18} />
+              </a>
+              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsApp('footer')} aria-label="WhatsApp" className="bg-white/10 hover:bg-accent p-2.5 rounded-full transition-colors">
+                <MessageCircle size={18} />
+              </a>
             </div>
           </div>
 
-          {/* Right: Map Placeholder & Final CTA */}
-          <div className="flex flex-col h-full">
-            <div className="bg-gray-200 rounded-3xl h-64 w-full mb-8 overflow-hidden relative shadow-inner">
-               {/* Mock Map */}
-               <div className="absolute inset-0 bg-blue-100 opacity-50"></div>
-               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                 <MapPin size={48} className="text-terracotta animate-bounce" />
-               </div>
-               <div className="absolute bottom-4 right-4 bg-white text-gray-800 text-xs px-2 py-1 rounded shadow">
-                 Mapa Ilustrativo
-               </div>
+          {/* Column 2: Specialties */}
+          <div>
+            <h3 className="font-display font-bold text-lg mb-6">Especialidades</h3>
+            <ul className="space-y-2">
+              {SERVICES.map((s, i) => (
+                <li key={i} className="flex items-center gap-2 text-gray-200 text-sm hover:text-accent transition-colors cursor-default">
+                  <span className="text-accent text-base">›</span>
+                  {s.title}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 3: Map */}
+          <div>
+            <h3 className="font-display font-bold text-lg mb-4">📍 Nossa Localização</h3>
+            <div className="rounded-2xl overflow-hidden shadow-xl border-2 border-white/20 mb-4 h-52">
+              <iframe
+                title="Localização Clinvet Sobradinho"
+                src={mapsEmbedSrc}
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={false}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
-            
-            <button 
-              className="w-full bg-accent hover:bg-terracotta text-white text-xl py-5 rounded-2xl font-display font-bold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-3"
-              onClick={() => window.open('https://wa.me/5561999999999', '_blank')}
+            <button
+              onClick={() => { trackMaps(); window.open('https://maps.app.goo.gl/mumMYF72Py2X519g9', '_blank'); }}
+              className="block w-full text-center bg-accent hover:bg-orange-500 text-white py-3 rounded-xl font-display font-bold transition-colors text-sm cursor-pointer"
             >
-              Agendar Consulta pelo WhatsApp
-              <PawPrint />
+              🗺 Ver Rota no Google Maps
             </button>
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-300">
-          <div className="flex items-center gap-2 mb-4 md:mb-0">
-            <PawPrint size={16} />
-            <span className="font-display font-bold">ClinVet</span>
-            <span>&copy; {new Date().getFullYear()}</span>
-          </div>
-          <p>Feito com amor para pets.</p>
+        {/* Bottom bar */}
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 gap-4">
+          <p>© 2026 Clinvet - Clínica Veterinária em Sobradinho. Todos os direitos reservados.</p>
+          <p>Desenvolvido com ❤️ para a saúde e bem-estar do seu pet.</p>
         </div>
       </div>
     </footer>

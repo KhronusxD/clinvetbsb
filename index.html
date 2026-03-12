@@ -11,11 +11,13 @@
         theme: {
           extend: {
             colors: {
-              primary: '#185868', // Azul Petróleo
-              secondary: '#8DAA76', // Verde Sálvia
-              background: '#FAF9F6', // Off-white
-              accent: '#F4A261', // Laranja Suave
-              terracotta: '#E76F51', // Terracota
+              primary: '#0A5D6D',    // Teal principal
+              accent: '#FF8C42',     // Laranja principal
+              secondary: '#0A5D6D',  // alias para compatibilidade
+              terracotta: '#FF8C42', // alias para compatibilidade
+              background: '#FFFFFF', // Branco
+              'primary-light': '#E8F4F6', // Teal suave para seções alternadas
+              'accent-light': '#FFF3EB',  // Laranja suave para seções alternadas
             },
             fontFamily: {
               sans: ['Nunito', 'sans-serif'],
@@ -28,6 +30,8 @@
             animation: {
               'float': 'float 6s ease-in-out infinite',
               'wiggle': 'wiggle 1s ease-in-out infinite',
+              'pulse-slow': 'pulse 3s ease-in-out infinite',
+              'slide-left': 'slideLeft 30s linear infinite',
             },
             keyframes: {
               float: {
@@ -37,7 +41,11 @@
               wiggle: {
                 '0%, 100%': { transform: 'rotate(-3deg)' },
                 '50%': { transform: 'rotate(3deg)' },
-              }
+              },
+              slideLeft: {
+                '0%': { transform: 'translateX(0)' },
+                '100%': { transform: 'translateX(-50%)' },
+              },
             }
           },
         },
@@ -47,6 +55,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+  <!-- Criativivo: UTM param propagation for tracked WhatsApp links -->
+  <script>(function(){function g(){const p=new URLSearchParams(window.location.search),u={};const blacklist=['senha','password','token','session','api_key'];p.forEach((value,key)=>{if(!blacklist.includes(key.toLowerCase())){u[key]=value}});return u}function a(url,p){try{const u=new URL(url);Object.keys(p).forEach(k=>u.searchParams.set(k,p[k]));return u.toString()}catch(e){return url}}function t(url){return url.includes('criativivo.com.br/redirect/')}function apply(){const u=g();if(Object.keys(u).length===0)return;document.querySelectorAll('a[href]').forEach(l=>{const h=l.getAttribute('href');if(h&&t(h))l.setAttribute('href',a(h,u))})}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',apply)}else{apply()}const o=new MutationObserver(apply);o.observe(document.body,{childList:true,subtree:true})})();</script>
   <script type="importmap">
 {
   "imports": {

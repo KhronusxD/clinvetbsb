@@ -21,14 +21,14 @@ const Hero: React.FC = () => {
           </div>
 
           <h1 className="text-4xl lg:text-5xl xl:text-6xl font-display font-bold text-primary leading-[1.15] mb-6">
-            Seu Pet é Família.{' '}
+            A tranquilidade de saber que seu{' '}
             <span className="text-accent relative inline-block">
-              Nosso Cuidado,
+              melhor amigo
               <svg className="absolute w-full h-3 -bottom-1 left-0 opacity-40 -z-10" viewBox="0 0 100 10" preserveAspectRatio="none">
                 <path d="M0 5 Q 50 10 100 5" stroke="#FF8C42" strokeWidth="8" fill="none" />
               </svg>
             </span>{' '}
-            a Certeza de uma Vida Plena e Feliz.
+            está em boas mãos.
           </h1>
 
           <p className="text-lg lg:text-xl text-gray-600 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0">
@@ -73,7 +73,7 @@ const Hero: React.FC = () => {
           />
 
           {/* Floating badge - 30 anos */}
-          <div className="absolute top-6 -left-4 lg:-left-8 bg-accent text-white p-3 rounded-2xl shadow-xl flex items-center gap-2 animate-float" style={{ animationDelay: '0.8s' }}>
+          <div className="absolute top-6 -left-4 lg:-left-8 bg-accent text-white p-3 rounded-2xl shadow-xl flex items-center gap-2 animate-float z-20" style={{ animationDelay: '0.8s' }}>
             <span className="text-2xl">🏆</span>
             <div>
               <p className="font-bold font-display text-sm leading-none">30 Anos</p>

@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
           </h1>
 
           <p className="text-lg lg:text-xl text-gray-600 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0">
-            Há 30 anos, a Clinvet Sobradinho é o porto seguro para a saúde e alegria do seu melhor amigo, com medicina de ponta e um coração que entende o seu.
+            Tradição de mais de 30 anos em Sobradinho: medicina veterinária avançada com o carinho de quem entende o seu pet.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4">

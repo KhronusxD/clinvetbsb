@@ -18,7 +18,7 @@ import {
 
 export const PHONE_MAIN = '(61) 3591-9676';
 export const WHATSAPP_NUMBER = '5561981579676';
-export const WHATSAPP_LINK = 'https://flowdesk-five-alpha.vercel.app/r/1871vt';
+export const WHATSAPP_LINK = 'https://flowdesk-five-alpha.vercel.app/r/8ugkp4';
 export const PHONE_LINK = `tel:+556135919676`;
 export const EMAIL = 'clinvetsobradinho@gmail.com';
 export const ADDRESS = 'Quadra 8 Bloco 11 Lote 11 loja 1 - Sobradinho, Brasília - DF, 73005-511';

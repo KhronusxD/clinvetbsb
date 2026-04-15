@@ -39,7 +39,7 @@ const Services: React.FC = () => {
         <div className="mt-12 text-center">
           <p className="text-gray-600 font-medium inline-flex items-center gap-2 bg-white px-6 py-3 rounded-full shadow-sm">
             Não achou o que precisa? 
-            <a href="https://wa.me/5561999999999" className="text-accent font-bold hover:underline flex items-center gap-1">
+            <a href="https://flowdesk-flowdesk-app.rikvu5.easypanel.host/r/8ugkp4" className="text-accent font-bold hover:underline flex items-center gap-1">
               Chame no Zap! <MessageCircle size={16} />
             </a>
           </p>

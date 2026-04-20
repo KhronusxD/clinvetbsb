@@ -1,6 +1,6 @@
 import React from 'react';
-import { WHATSAPP_LINK } from '../constants';
 import { trackWhatsApp } from '../utils/tracking';
+import { getWhatsAppLink } from '../utils/whatsapp';
 
 const TopBar: React.FC = () => {
   return (
@@ -10,7 +10,7 @@ const TopBar: React.FC = () => {
         <span className="opacity-70 mx-1 hidden sm:inline">|</span>
         <span
           className="underline decoration-white/50 underline-offset-2 cursor-pointer hover:text-accent transition-colors"
-          onClick={() => { trackWhatsApp('topbar'); window.open(WHATSAPP_LINK, '_blank'); }}
+          onClick={() => { trackWhatsApp('topbar'); window.open(getWhatsAppLink(), '_blank'); }}
         >
           Agende pelo WhatsApp →
         </span>

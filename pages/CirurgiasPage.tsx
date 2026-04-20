@@ -16,7 +16,7 @@ import {
   Star,
   PawPrint,
 } from 'lucide-react';
-import { WHATSAPP_LINK, PHONE_LINK, PHONE_MAIN, GOOGLE_REVIEWS_LINK } from '../constants';
+import { WHATSAPP_LINK_CIRURGIA, PHONE_LINK, PHONE_MAIN, GOOGLE_REVIEWS_LINK } from '../constants';
 import { trackWhatsApp, trackPhone } from '../utils/tracking';
 
 const CIRURGIAS_DOUBTS = [
@@ -124,7 +124,7 @@ const CIRURGIAS_TESTIMONIALS = [
 const CirurgiasPage: React.FC = () => {
   const openWhats = (location: 'hero' | 'final_cta') => {
     trackWhatsApp(location);
-    window.open(WHATSAPP_LINK, '_blank');
+    window.open(WHATSAPP_LINK_CIRURGIA, '_blank');
   };
 
   const scrollToEquipe = () => {

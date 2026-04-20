@@ -75,7 +75,16 @@
 }
 </script>
 <link rel="stylesheet" href="/index.css">
-  <script src="https://flowdesk-flowdesk-app.rikvu5.easypanel.host/pixel.js?id=e619ff88-48f5-4a97-80b6-a32e267b510e&link=8ugkp4"></script>
+  <script>
+    (function(){
+      var path = (window.location.pathname || '').replace(/\/$/, '');
+      var pixelLink = path === '/cirurgias' ? 'ehhgki' : '8ugkp4';
+      var s = document.createElement('script');
+      s.src = 'https://flowdesk-flowdesk-app.rikvu5.easypanel.host/pixel.js?id=e619ff88-48f5-4a97-80b6-a32e267b510e&link=' + pixelLink;
+      s.async = true;
+      document.head.appendChild(s);
+    })();
+  </script>
 </head>
   <body class="bg-background text-gray-700 antialiased font-sans overflow-x-hidden">
     <!-- Google Tag Manager (noscript) -->

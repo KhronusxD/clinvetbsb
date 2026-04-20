@@ -1,9 +1,11 @@
 import React from 'react';
 import { MapPin, Phone, Mail, Instagram, Facebook, MessageCircle } from 'lucide-react';
-import { WHATSAPP_LINK, WHATSAPP_NUMBER, PHONE_LINK, PHONE_MAIN, EMAIL, ADDRESS, GOOGLE_MAPS_LINK, SERVICES } from '../constants';
+import { WHATSAPP_NUMBER, PHONE_LINK, PHONE_MAIN, EMAIL, ADDRESS, GOOGLE_MAPS_LINK, SERVICES } from '../constants';
 import { trackWhatsApp, trackPhone, trackMaps } from '../utils/tracking';
+import { getWhatsAppLink } from '../utils/whatsapp';
 
 const Footer: React.FC = () => {
+  const whatsappHref = getWhatsAppLink();
   // Real Google Maps embed URL obtained from Google Maps > Share > Embed a map
   const mapsEmbedSrc = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3842.019786022881!2d-47.80196499999999!3d-15.643934799999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a407e75283f2d%3A0x3b7a6cb88231e1d6!2sClinvet%20Veterin%C3%A1ria!5e0!3m2!1spt-BR!2sbr!4v1773329316288!5m2!1spt-BR!2sbr`;
 
@@ -36,7 +38,7 @@ const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsApp('footer')} className="flex items-center gap-3 hover:text-accent transition-colors">
+                <a href={whatsappHref} target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsApp('footer')} className="flex items-center gap-3 hover:text-accent transition-colors">
                   <MessageCircle className="text-accent shrink-0" size={18} />
                   <p className="text-sm">(61) 98157-9676 – WhatsApp</p>
                 </a>
@@ -57,7 +59,7 @@ const Footer: React.FC = () => {
               <a href="#" aria-label="Facebook" className="bg-white/10 hover:bg-accent p-2.5 rounded-full transition-colors">
                 <Facebook size={18} />
               </a>
-              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsApp('footer')} aria-label="WhatsApp" className="bg-white/10 hover:bg-accent p-2.5 rounded-full transition-colors">
+              <a href={whatsappHref} target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsApp('footer')} aria-label="WhatsApp" className="bg-white/10 hover:bg-accent p-2.5 rounded-full transition-colors">
                 <MessageCircle size={18} />
               </a>
             </div>

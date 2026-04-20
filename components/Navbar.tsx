@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Menu, X, Phone, MessageCircle } from 'lucide-react';
-import { NAV_LINKS, WHATSAPP_LINK, PHONE_LINK, PHONE_MAIN } from '../constants';
+import { NAV_LINKS, PHONE_LINK, PHONE_MAIN } from '../constants';
 import { trackWhatsApp, trackPhone } from '../utils/tracking';
+import { getWhatsAppLink } from '../utils/whatsapp';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,7 +50,7 @@ const Navbar: React.FC = () => {
             </a>
             <button
               className="bg-accent hover:bg-orange-500 text-white px-5 py-2.5 rounded-full font-display font-bold shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 active:translate-y-0 duration-200 flex items-center gap-2 text-sm xl:text-base"
-              onClick={() => { trackWhatsApp('navbar'); window.open(WHATSAPP_LINK, '_blank'); }}
+              onClick={() => { trackWhatsApp('navbar'); window.open(getWhatsAppLink(), '_blank'); }}
             >
               <MessageCircle size={16} /> WhatsApp
             </button>
@@ -94,7 +95,7 @@ const Navbar: React.FC = () => {
             </a>
               <button
                 className="w-full bg-accent text-white px-4 py-3 rounded-xl font-display font-bold shadow-md active:scale-95 transition-transform flex justify-center items-center gap-2"
-                onClick={() => { trackWhatsApp('navbar'); window.open(WHATSAPP_LINK, '_blank'); }}
+                onClick={() => { trackWhatsApp('navbar'); window.open(getWhatsAppLink(), '_blank'); }}
               >
                 <MessageCircle size={18} /> WhatsApp
               </button>

@@ -5,6 +5,15 @@ import { trackWhatsApp, trackPhone } from '../utils/tracking';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const isHome = typeof window === 'undefined' ? true : window.location.pathname === '/' || window.location.pathname === '';
+  const resolveHref = (href: string) => (href.startsWith('#') && !isHome ? `/${href}` : href);
+  const onLogoClick = () => {
+    if (isHome) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      window.location.href = '/';
+    }
+  };
 
   return (
     <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm border-b border-primary/10">
@@ -12,7 +21,7 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between items-center h-20">
 
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center gap-2 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+          <div className="flex-shrink-0 flex items-center gap-2 cursor-pointer" onClick={onLogoClick}>
             <img
               src="/logo-oficial.png"
               alt="Clinvet Sobradinho"
@@ -25,7 +34,7 @@ const Navbar: React.FC = () => {
             {NAV_LINKS.map((link) => (
               <a
                 key={link.label}
-                href={link.href}
+                href={resolveHref(link.href)}
                 className="font-display font-bold text-gray-600 hover:text-primary transition-colors duration-200 text-sm xl:text-base"
               >
                 {link.label}
@@ -68,7 +77,7 @@ const Navbar: React.FC = () => {
             {NAV_LINKS.map((link) => (
               <a
                 key={link.label}
-                href={link.href}
+                href={resolveHref(link.href)}
                 className="block px-3 py-3 rounded-xl text-base font-medium text-gray-700 hover:bg-primary-light hover:text-primary"
                 onClick={() => setIsOpen(false)}
               >

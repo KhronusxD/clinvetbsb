@@ -22,14 +22,15 @@ const FinalCTA: React.FC = () => {
 
         <div className="relative z-10">
           <div className="inline-flex items-center gap-2 bg-accent/20 border border-accent/40 text-white px-4 py-2 rounded-full text-sm font-bold mb-6">
-            🐾 Sua família merece o melhor cuidado
+            <PawPrint size={14} />
+            Sua família merece colo.
           </div>
 
           <h2 className="text-3xl md:text-5xl font-display font-bold mb-6 leading-tight">
-            Não Espere. Garanta a Saúde e a Felicidade do Seu Pet Hoje Mesmo.
+            Vem cuidar do seu pet com a gente.
           </h2>
           <p className="text-lg md:text-xl text-white/80 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Agende uma consulta e deixe que nossos especialistas cuidem do seu melhor amigo com a dedicação que ele merece.
+            Agende uma consulta e deixe nossos especialistas cuidarem do seu melhor amigo com a dedicação que ele merece.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -38,14 +39,14 @@ const FinalCTA: React.FC = () => {
               onClick={() => trackPhone('final_cta')}
               className="w-full sm:w-auto flex items-center justify-center gap-3 bg-white text-primary text-lg py-5 px-10 rounded-full font-display font-bold shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"
             >
-              <Phone size={20} /> 📞 Ligar: {PHONE_MAIN}
+              <Phone size={20} /> Ligar: {PHONE_MAIN}
             </a>
 
             <button
               className="w-full sm:w-auto bg-accent hover:bg-orange-500 text-white text-lg py-5 px-10 rounded-full font-display font-bold shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3 mx-auto"
               onClick={() => { trackWhatsApp('final_cta'); window.open(WHATSAPP_LINK, '_blank'); }}
             >
-              <MessageCircle size={20} /> 💬 Agende pelo WhatsApp
+              <MessageCircle size={20} /> Agende pelo WhatsApp
             </button>
           </div>
 

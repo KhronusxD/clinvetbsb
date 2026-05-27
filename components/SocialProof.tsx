@@ -5,8 +5,8 @@ const SocialProof: React.FC = () => {
   return (
     <section className="py-12 bg-primary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="text-center text-white/80 font-bold text-sm uppercase tracking-widest mb-8">
-          A Confiança de Quem Mais Importa: Nossos Clientes e Seus Pets Felizes
+        <p className="text-center text-white/80 font-medium text-base mb-8">
+          Pessoas (e bichos) que confiam na gente
         </p>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6">
           {SOCIAL_PROOF_STATS.map((stat, idx) => (
@@ -18,8 +18,10 @@ const SocialProof: React.FC = () => {
                   : 'bg-white/10 text-white hover:bg-white/20'
               }`}
             >
-              <span className="text-3xl mb-2">{stat.icon}</span>
-              <span className={`text-2xl lg:text-3xl font-display font-bold ${stat.highlight ? 'text-white' : 'text-white'}`}>
+              <span className={`mb-2 ${stat.highlight ? 'text-yellow-300' : 'text-white/90'}`}>
+                {stat.icon}
+              </span>
+              <span className="text-2xl lg:text-3xl font-display font-bold text-white">
                 {stat.value}
               </span>
               <span className={`text-xs mt-1 leading-tight ${stat.highlight ? 'text-white/90' : 'text-white/70'}`}>

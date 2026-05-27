@@ -1,7 +1,8 @@
 import React from 'react';
-import { PawPrint, Phone, MessageCircle } from 'lucide-react';
+import { PawPrint, Phone, MessageCircle, Award, Calendar } from 'lucide-react';
 import { WHATSAPP_LINK, PHONE_LINK, PHONE_MAIN } from '../constants';
 import { trackWhatsApp } from '../utils/tracking';
+import OpenStatus from './OpenStatus';
 
 const Hero: React.FC = () => {
   return (
@@ -14,10 +15,15 @@ const Hero: React.FC = () => {
 
         {/* Text Content */}
         <div className="flex-1 text-center lg:text-left z-10">
+          {/* Status: Aberto agora / Fechado · abre seg às 8h */}
+          <div className="flex justify-center lg:justify-start">
+            <OpenStatus />
+          </div>
+
           {/* Small badge */}
           <div className="inline-flex items-center gap-2 bg-primary-light text-primary text-sm font-bold px-4 py-2 rounded-full mb-6 border border-primary/20">
             <PawPrint size={14} />
-            <span>30 Anos Cuidando de Quem Você Ama</span>
+            <span>30 anos cuidando de quem você ama</span>
           </div>
 
           <h1 className="text-4xl lg:text-5xl xl:text-6xl font-display font-bold text-primary leading-[1.15] mb-6">
@@ -40,7 +46,8 @@ const Hero: React.FC = () => {
               className="w-full sm:w-auto bg-accent hover:bg-orange-500 text-white text-lg px-8 py-4 rounded-full font-display font-bold shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3"
               onClick={() => { trackWhatsApp('hero'); window.open(WHATSAPP_LINK, '_blank'); }}
             >
-              📅 Agende a Consulta do Seu Pet Agora!
+              <Calendar size={20} />
+              Agendar consulta agora
             </button>
             <button
               className="w-full sm:w-auto bg-white hover:bg-primary-light border-2 border-primary text-primary text-lg px-8 py-4 rounded-full font-display font-bold hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3"
@@ -74,10 +81,10 @@ const Hero: React.FC = () => {
 
           {/* Floating badge - 30 anos */}
           <div className="absolute top-6 -left-4 lg:-left-8 bg-accent text-white p-3 rounded-2xl shadow-xl flex items-center gap-2 animate-float z-20" style={{ animationDelay: '0.8s' }}>
-            <span className="text-2xl">🏆</span>
+            <Award className="w-6 h-6" />
             <div>
-              <p className="font-bold font-display text-sm leading-none">30 Anos</p>
-              <p className="text-xs opacity-90">Sobradinho</p>
+              <p className="font-bold font-display text-sm leading-none">30 anos</p>
+              <p className="text-xs opacity-90">em Sobradinho</p>
             </div>
           </div>
 

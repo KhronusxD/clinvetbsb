@@ -16,10 +16,10 @@ const Diferenciais: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <h2 className="text-3xl lg:text-4xl font-display font-bold text-primary mb-4">
-            O Que Nos Torna a Escolha Certa
+            O que tem aqui que não tem em outro lugar
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            para a Família do Seu Pet
+            para a família do seu pet
           </p>
         </div>
 

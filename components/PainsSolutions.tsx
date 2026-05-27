@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 import { PAIN_SOLUTIONS } from '../constants';
 
 const PainsSolutions: React.FC = () => {
@@ -9,10 +10,10 @@ const PainsSolutions: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <h2 className="text-3xl lg:text-4xl font-display font-bold text-primary mb-4">
-            Entendemos Suas Preocupações.
+            A gente te entende.
           </h2>
           <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-            Oferecemos soluções que transformam medos em confiança.
+            Cuidado que transforma medo em confiança.
           </p>
         </div>
 
@@ -27,26 +28,38 @@ const PainsSolutions: React.FC = () => {
               }`}
               onClick={() => setExpanded(expanded === idx ? null : idx)}
             >
-              <div className="text-5xl mb-4">{item.icon}</div>
+              <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-4 ${
+                expanded === idx ? 'bg-primary text-white' : 'bg-primary-light text-primary'
+              }`}>
+                {item.icon}
+              </div>
               <h3 className="text-xl font-display font-bold text-primary mb-3">
                 {item.problem_title}
               </h3>
 
               <div className="space-y-4">
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">O problema:</p>
+                  <p className="text-xs font-bold tracking-wider text-gray-400 mb-1">O que sentimos:</p>
                   <p className="text-gray-600 leading-relaxed text-sm">{item.problem}</p>
                 </div>
 
                 <div className={`overflow-hidden transition-all duration-300 ${expanded === idx ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'}`}>
                   <div className="border-t border-primary/20 pt-4">
-                    <p className="text-xs font-bold uppercase tracking-wider text-accent mb-1">Nossa Solução:</p>
+                    <p className="text-xs font-bold tracking-wider text-accent mb-1">Como cuidamos disso:</p>
                     <p className="text-primary font-medium leading-relaxed text-sm">{item.solution}</p>
                   </div>
                 </div>
 
-                <button className={`text-sm font-bold transition-colors ${expanded === idx ? 'text-primary' : 'text-accent'}`}>
-                  {expanded === idx ? '▲ Fechar' : '▼ Ver Nossa Solução'}
+                <button className={`inline-flex items-center gap-1.5 text-sm font-bold transition-colors ${expanded === idx ? 'text-primary' : 'text-accent'}`}>
+                  {expanded === idx ? (
+                    <>
+                      <ChevronUp size={16} /> Fechar
+                    </>
+                  ) : (
+                    <>
+                      <ChevronDown size={16} /> Ver mais
+                    </>
+                  )}
                 </button>
               </div>
             </div>

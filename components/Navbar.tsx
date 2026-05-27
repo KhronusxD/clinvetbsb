@@ -91,7 +91,7 @@ const Navbar: React.FC = () => {
               onClick={() => trackPhone('navbar')}
               className="w-full flex justify-center items-center gap-2 border-2 border-primary text-primary px-4 py-3 rounded-xl font-display font-bold"
             >
-              📞 Ligar: {PHONE_MAIN}
+              <Phone size={16} /> Ligar: {PHONE_MAIN}
             </a>
               <button
                 className="w-full bg-accent text-white px-4 py-3 rounded-xl font-display font-bold shadow-md active:scale-95 transition-transform flex justify-center items-center gap-2"

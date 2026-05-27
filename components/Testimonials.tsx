@@ -37,9 +37,9 @@ const Testimonials: React.FC = () => {
         <div className="text-center mb-12">
           {/* Google Rating Badge */}
           <div className="inline-flex items-center gap-3 bg-white border-2 border-yellow-400 px-6 py-3 rounded-full shadow-md mb-8">
-            <span className="text-2xl">🌟</span>
+            <Star className="w-7 h-7 text-yellow-400 fill-yellow-400" />
             <div className="text-left">
-              <p className="font-display font-bold text-gray-800 text-sm">Mais de 600 avaliações no Google!</p>
+              <p className="font-display font-bold text-gray-800 text-sm">Mais de 600 avaliações no Google</p>
               <p className="text-yellow-500 font-bold text-sm">⭐⭐⭐⭐⭐ 4.8 de 5 estrelas</p>
             </div>
             <a
@@ -53,9 +53,9 @@ const Testimonials: React.FC = () => {
           </div>
 
           <h2 className="text-3xl lg:text-4xl font-display font-bold text-primary mb-4">
-            Histórias de Amor e Confiança
+            Histórias que aquecem a gente
           </h2>
-          <p className="text-gray-500 text-lg">que Nos Inspiram</p>
+          <p className="text-gray-500 text-lg">contadas por quem cuida do que mais importa</p>
         </div>
 
         {/* Carousel */}

@@ -9,7 +9,7 @@ const About: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-14">
           <h2 className="text-3xl lg:text-4xl font-display font-bold text-primary mb-4">
-            30 Anos de Paixão, Dedicação e Cuidado
+            30 anos de paixão, dedicação e cuidado
           </h2>
           <p className="text-gray-500 text-lg">em Sobradinho</p>
         </div>
@@ -51,14 +51,16 @@ const About: React.FC = () => {
 
         {/* Values Grid */}
         <div>
-          <h3 className="text-2xl font-display font-bold text-center text-primary mb-8">Nossos Valores</h3>
+          <h3 className="text-2xl font-display font-bold text-center text-primary mb-8">Nossos valores</h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
             {ABOUT_VALUES.map((val, idx) => (
               <div
                 key={idx}
                 className="bg-primary-light rounded-2xl p-5 text-center hover:bg-primary hover:text-white transition-all duration-300 group cursor-default"
               >
-                <div className="text-3xl mb-2">{val.icon}</div>
+                <div className="flex justify-center mb-3 text-primary group-hover:text-white transition-colors">
+                  {val.icon}
+                </div>
                 <p className="font-display font-bold text-primary text-sm group-hover:text-white transition-colors">{val.label}</p>
                 <p className="text-xs text-gray-500 group-hover:text-white/80 transition-colors mt-1 leading-tight">{val.desc}</p>
               </div>

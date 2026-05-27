@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Phone, Mail, Instagram, Facebook, MessageCircle } from 'lucide-react';
+import { MapPin, Phone, Mail, Instagram, Facebook, MessageCircle, Navigation } from 'lucide-react';
 import { WHATSAPP_NUMBER, PHONE_LINK, PHONE_MAIN, EMAIL, ADDRESS, GOOGLE_MAPS_LINK, SERVICES } from '../constants';
 import { trackWhatsApp, trackPhone, trackMaps } from '../utils/tracking';
 import { getWhatsAppLink } from '../utils/whatsapp';
@@ -80,7 +80,9 @@ const Footer: React.FC = () => {
 
           {/* Column 3: Map */}
           <div>
-            <h3 className="font-display font-bold text-lg mb-4">📍 Nossa Localização</h3>
+            <h3 className="font-display font-bold text-lg mb-4 flex items-center gap-2">
+              <MapPin size={18} className="text-accent" /> Nossa localização
+            </h3>
             <div className="rounded-2xl overflow-hidden shadow-xl border-2 border-white/20 mb-4 h-52">
               <iframe
                 title="Localização Clinvet Sobradinho"
@@ -95,17 +97,17 @@ const Footer: React.FC = () => {
             </div>
             <button
               onClick={() => { trackMaps(); window.open('https://maps.app.goo.gl/mumMYF72Py2X519g9', '_blank'); }}
-              className="block w-full text-center bg-accent hover:bg-orange-500 text-white py-3 rounded-xl font-display font-bold transition-colors text-sm cursor-pointer"
+              className="w-full inline-flex items-center justify-center gap-2 bg-accent hover:bg-orange-500 text-white py-3 rounded-xl font-display font-bold transition-colors text-sm cursor-pointer"
             >
-              🗺 Ver Rota no Google Maps
+              <Navigation size={16} /> Ver rota no Google Maps
             </button>
           </div>
         </div>
 
         {/* Bottom bar */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 gap-4">
-          <p>© 2026 Clinvet - Clínica Veterinária em Sobradinho. Todos os direitos reservados.</p>
-          <p>Desenvolvido com ❤️ para a saúde e bem-estar do seu pet.</p>
+          <p>© 2026 Clinvet — Clínica Veterinária em Sobradinho. Todos os direitos reservados.</p>
+          <p>Feito com carinho para a saúde e bem-estar do seu pet.</p>
         </div>
       </div>
     </footer>

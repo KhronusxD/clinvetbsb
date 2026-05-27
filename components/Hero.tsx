@@ -1,15 +1,42 @@
 import React from 'react';
-import { PawPrint, Phone, MessageCircle, Award, Calendar } from 'lucide-react';
+import { Phone, MessageCircle, Award, Calendar } from 'lucide-react';
 import { WHATSAPP_LINK, PHONE_LINK, PHONE_MAIN } from '../constants';
 import { trackWhatsApp } from '../utils/tracking';
 import OpenStatus from './OpenStatus';
 
 const Hero: React.FC = () => {
   return (
-    <section id="inicio" className="relative overflow-hidden pt-12 pb-20 lg:pt-24 lg:pb-32 px-4 sm:px-6 bg-white">
-      {/* Decorative teal blobs */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary-light rounded-full -translate-y-1/3 translate-x-1/3 -z-10"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent-light rounded-full translate-y-1/2 -translate-x-1/2 -z-10"></div>
+    <section id="inicio" className="relative overflow-hidden pt-12 pb-20 lg:pt-24 lg:pb-32 px-4 sm:px-6">
+      {/* Background: foto da fachada da Clinvet (WebP com JPG fallback, versão mobile sob ~640px) */}
+      <picture aria-hidden="true">
+        <source
+          srcSet="/clinvet-frente-mobile.webp"
+          type="image/webp"
+          media="(max-width: 640px)"
+        />
+        <source
+          srcSet="/clinvet-frente-mobile.jpg"
+          type="image/jpeg"
+          media="(max-width: 640px)"
+        />
+        <source srcSet="/clinvet-frente.webp" type="image/webp" />
+        <img
+          src="/clinvet-frente.jpg"
+          alt=""
+          aria-hidden="true"
+          loading="eager"
+          decoding="async"
+          // @ts-expect-error: fetchpriority é HTML válido (React 19 aceita lowercase tb)
+          fetchpriority="high"
+          className="absolute inset-0 w-full h-full object-cover -z-20 pointer-events-none select-none"
+        />
+      </picture>
+
+      {/* Overlay branco 50% pra preservar a legibilidade do conteúdo */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 -z-10 bg-white/50 pointer-events-none"
+      />
 
       <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-20">
 
@@ -18,12 +45,6 @@ const Hero: React.FC = () => {
           {/* Status: Aberto agora / Fechado · abre seg às 8h */}
           <div className="flex justify-center lg:justify-start">
             <OpenStatus />
-          </div>
-
-          {/* Small badge */}
-          <div className="inline-flex items-center gap-2 bg-primary-light text-primary text-sm font-bold px-4 py-2 rounded-full mb-6 border border-primary/20">
-            <PawPrint size={14} />
-            <span>30 anos cuidando de quem você ama</span>
           </div>
 
           <h1 className="text-4xl lg:text-5xl xl:text-6xl font-display font-bold text-primary leading-[1.15] mb-6">

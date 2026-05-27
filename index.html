@@ -39,6 +39,7 @@
               'wiggle': 'wiggle 1s ease-in-out infinite',
               'pulse-slow': 'pulse 3s ease-in-out infinite',
               'slide-left': 'slideLeft 30s linear infinite',
+              'fade-in-up': 'fadeInUp 300ms ease-out',
             },
             keyframes: {
               float: {
@@ -52,6 +53,10 @@
               slideLeft: {
                 '0%': { transform: 'translateX(0)' },
                 '100%': { transform: 'translateX(-50%)' },
+              },
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(8px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
               },
             }
           },

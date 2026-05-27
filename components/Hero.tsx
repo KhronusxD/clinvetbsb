@@ -6,7 +6,7 @@ import OpenStatus from './OpenStatus';
 
 const Hero: React.FC = () => {
   return (
-    <section id="inicio" className="relative overflow-hidden pt-12 pb-20 lg:pt-24 lg:pb-32 px-4 sm:px-6">
+    <section id="inicio" className="relative isolate overflow-hidden pt-12 pb-20 lg:pt-24 lg:pb-32 px-4 sm:px-6">
       {/* Background: foto da fachada da Clinvet (WebP com JPG fallback, versão mobile sob ~640px) */}
       <picture aria-hidden="true">
         <source

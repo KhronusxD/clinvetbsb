@@ -32,10 +32,10 @@ const Hero: React.FC = () => {
         />
       </picture>
 
-      {/* Overlay branco 50% pra preservar a legibilidade do conteúdo */}
+      {/* Overlay branco 80% pra preservar a legibilidade do conteúdo */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-white/50 pointer-events-none"
+        className="absolute inset-0 -z-10 bg-white/80 pointer-events-none"
       />
 
       <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-20">
